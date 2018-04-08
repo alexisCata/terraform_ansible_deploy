@@ -6,7 +6,7 @@ The repository contains a Terraform script that deploys an environment in AWS. C
 Also contains an Ansible script to install docker, and to pull and run an image from DockerHub with a simple Django [project](https://github.com/alexisCata/django_helloworld) that connects to the RDS instance created before. 
 
 I decided to use Ansible to install Docker and deploy the Django project to separate the deployment of the architecture from projects deployment.
-This is a first approach to Terraform and Ansible so I tried to follow the KISS principle.
+This is a first approach to use Terraform and Ansible so I tried to follow the KISS principle.
 
 Versions:
 - Terraform v0.11.5
@@ -121,22 +121,20 @@ Template to add AWS credentials and DB login.
 
 
 ## Ansible script
-You can find it on /provision
+You can find it on /provision. It uses a role from ansible-galaxy (Ansible content repository) to install Docker, commands pip to install docker python packages and shell to pull and run the image.
 
-It runs an Ansible Role that execute some tasks.
 #### bootstrap.yml
 Tasks for install docker and some docker python packages
 
 #### run.yml
 Tasks for pull and run the docker images
 
-I used ansible-galaxy (Ansible content repository) to install Docker. Then pull and run my own image with a Django project.
-Previously I developed an ansible script placed at /provision_old to deploy the Django project directly with Ansible
+
+
+I started first with an ansible script placed at /provision_old to deploy the Django project directly with Ansible
 but finally I decided to discard it because nowadays is not a proper way to deploy a project, so I do it with Docker, but anyways 
 only use Docker is not be the best option, so I recommend to use some COEs like Kubernetes, Docker Swarm or Mesos.
 
-_Notes:
-By default AWS region "us-east-1"_
 ## Dependencies
     
 [Terraform](https://www.terraform.io/)
