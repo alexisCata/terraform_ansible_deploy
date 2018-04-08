@@ -1,0 +1,11 @@
+- hosts: servers
+  vars_files:
+    - vars.yml
+  gather_facts: false
+  become: yes
+
+  tasks:
+    - name: run server
+      django_manage: command=runserver app_path={{ install_root }}/{{ project_name }} pythonpath={{ pythonpath }}
+      environment:
+        DB_HOST: "{{ db_host }}"

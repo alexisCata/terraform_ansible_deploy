@@ -1,0 +1,20 @@
+- name: locale
+  shell: locale-gen es_ES.UTF-8
+
+- name: install or upgrade docker
+  include_role:
+    name: mongrelion.docker
+  vars:
+    docker_version: "17.03"
+    setup_script_md5_sum: 2905656d3510d739dfd427713f6d421b
+
+- name: run
+  shell: apt-get install python-pip python-dev build-essential -y
+
+- name: install python modules for docker
+  pip:
+    name: "{{ item.name }}"
+    state: present
+  with_items:
+  - { name: docker-py }
+  - { name: docker }

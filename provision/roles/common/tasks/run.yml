@@ -1,0 +1,16 @@
+
+#- name: pull and run image
+#  docker_container:
+#      name: django_hello_world
+#      image: alexis_cata/django_hello_world
+#      state: started
+#      env:
+#        DB_HOST: "{{ db_host }}"
+- name: pull docker image
+  shell: docker pull alexiscata/django_hello_world
+
+- name: run docker image
+  shell: docker run -d -p 80:8000 -e DB_HOST={{ db_host }} alexiscata/django_hello_world >> log.txt
+
+
+

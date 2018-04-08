@@ -1,0 +1,19 @@
+project_name: django_helloworld
+install_root: /var/local/my_django_hello
+wsgi_module: helloworld.wsgi
+pythonpath: "{{ install_root }}/{{ project_name }}"
+project_repo: https://github.com/alexisCata/django_helloworld.git
+ssh_private_key: ../../.ssh/id_rsa
+static_root: "{{ install_root }}/{{ project_name }}/static"
+server_name: django-hello.com www.django-hello.com
+db_host: terraform-20180407161813581100000001.cuycxx9sahds.us-east-1.rds.amazonaws.com
+db_name: my_db
+db_user: my_db_user1
+db_password: My_db_pass1
+system_packages:
+  - git
+  - nginx
+  - gunicorn
+  - python3-pip
+  - python3-dev
+  - python3-psycopg2

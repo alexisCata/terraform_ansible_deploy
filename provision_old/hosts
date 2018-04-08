@@ -1,0 +1,8 @@
+[servers]
+35.153.127.192
+
+[servers:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=../../.ssh/id_rsa.pem
+ansible_python_interpreter=/usr/bin/python3
+
