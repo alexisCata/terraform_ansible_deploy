@@ -121,7 +121,9 @@ Template to add AWS credentials and DB login.
 
 
 ## Ansible script
-You can find it on /provision. It uses a role from ansible-galaxy (Ansible content repository) to install Docker, commands pip to install docker python packages and shell to pull and run the image.
+You can find it on /provision. It uses a role from ansible-galaxy (Ansible content repository) 
+to install Docker, commands pip to install docker python packages and shell to pull and 
+run the Docker image to expose on port 80 a Django project.
 
 #### bootstrap.yml
 Tasks for install docker and some docker python packages
