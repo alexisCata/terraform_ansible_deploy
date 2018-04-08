@@ -131,9 +131,9 @@ Tasks for pull and run the docker images
 
 
 
-I started first with an ansible script placed at /provision_old to deploy the Django project directly with Ansible
+_Note: I started first with an ansible script placed at /provision_old to deploy the Django project directly with Ansible
 but finally I decided to discard it because nowadays is not a proper way to deploy a project, so I do it with Docker, but anyways 
-only use Docker is not be the best option, so I recommend to use some COEs like Kubernetes, Docker Swarm or Mesos.
+only use Docker is not be the best option, so I recommend to use some COEs like Kubernetes, Docker Swarm or Mesos._
 
 ## Dependencies
     
