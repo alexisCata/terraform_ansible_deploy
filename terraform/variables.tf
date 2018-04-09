@@ -26,7 +26,7 @@ variable "ssh_pub" {
 	default = "~/.ssh/id_rsa.pub"
 }
 variable "bucket_name" {
-    default = "my-s3-bucket-alexis-123"
+    default = "my-s3-bucket-alexis-789"
 }
 variable "acl" {
 	default  = "private"
